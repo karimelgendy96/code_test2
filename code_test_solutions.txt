@@ -1,0 +1,41 @@
+linked list :
+First I'm going to initialize two pointers 
+-fast pointer :will move two nodes at each iteration
+-slow pointer :will move one node at each iteration
+every time I'll check if the fastpointer.next.next is null I'll return the slowpointer.next else if the fastpointer.next 
+is null I'll return the slow.
+
+Databases:
+SELECT MAX(salary) AS second_highest_salary
+FROM Employee
+WHERE salary < (SELECT MAX(salary) FROM Employee)
+
+Queue:
+1-enqueue:O(1)
+  dequeue:O(1)
+2-in case of max priority queue:
+ first I'll initialize an empty array of object 
+ for enqueue :
+ I'll create a new object for the element I'll enqueue and insert the new object into
+ sorted array based on the priority
+ for the dequeue :
+ I'll check if the queue is empty I'll return a message "Queue is empty"
+ else remove and return the last element in the array 
+ Complexity:
+  enqueuing:O(n) the worst case may be that I'll enqueue an element with highest priority than the rest of the array 
+  so I'll be shifting the positions of all the elements
+  dequeueing:O(1) as I'll just remove the last element
+
+System:
+ERD
++------------------+       +-------------------+       +-----------------+
+|      User        |       |       Post        |       |     Review      |
++------------------+       +-------------------+       +-----------------+
+| id (PK)          |       | id (PK)           |       | id (PK)         |
+| username         |       | title             |       | rating          |
++------------------+       | body              |       | comment         |
+                           | user_id (FK)      |       | post_id (FK)    |
+                           +-------------------+       | user_id (FK)    |
+                                                        +-----------------+
+
+
